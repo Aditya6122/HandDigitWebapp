@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 from flask_cors import CORS
 import pickle
 import base64
@@ -11,7 +11,11 @@ model = pickle.load(open('model\model2.pkl','rb'))
 app=Flask(__name__)
 CORS(app)
 
-@app.route('/',methods=['POST'])
+@app.route('/')
+def home():
+     return render_template("index.html")
+
+@app.route('/predict',methods=['POST'])
 def predict():
      output = request.get_json()
      decoded_data=base64.b64decode((output[22:]))

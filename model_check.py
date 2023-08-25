@@ -1,6 +1,4 @@
 import cv2
-from PIL import Image
-import numpy as np
 import pickle
 
 scaler = pickle.load(open('model\standardscaler.pkl','rb'))
@@ -15,5 +13,4 @@ X_data = X_data.reshape((-1,784))
 prediction = model.predict(X_data)
 
 print(prediction)
-
 cv2.imwrite("image_cv2.jpg", thresh1)
