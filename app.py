@@ -6,7 +6,7 @@ from PIL import Image
 from io import BytesIO
 import numpy as np
 
-model = pickle.load(open('model\\model2.pkl','rb'))
+model = pickle.load(open('model2.pkl','rb'))
 
 app=Flask(__name__)
 CORS(app)
