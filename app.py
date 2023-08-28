@@ -28,3 +28,6 @@ def predict():
      X_data = X_data.reshape((-1,784))
      prediction = model.predict(X_data)
      return str(prediction[0])
+
+if __name__=="__main__":
+    app.run(debug=True)
