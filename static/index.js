@@ -22,7 +22,7 @@ toolbar.addEventListener('click', e => {
     if (e.target.id === 'submit'){
         var image = canvas.toDataURL('image/jpg');
         $.ajax({
-            url:"http://127.0.0.1:8000/predict",
+            url:"/predict",
             type:"POST",
             contentType: "application/json",
             data: JSON.stringify(image),
